@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=375,maximum-scale=2,user-scalable=no,minimal-ui"/>
+    <meta name="apple-touch-fullscreen" content="no"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>大连四季上东·微楼书</title>
+
+    <!-- injector:css -->
+    <link rel="stylesheet" href="assets/stylesheets/animation.css"/>
+    <link rel="stylesheet" href="assets/stylesheets/swiper.min.css"/>
+    <link rel="stylesheet" href="assets/stylesheets/jquery.bxslider.css"/>
+    <link rel="stylesheet/less" href="assets/stylesheets/main.less"/>
+    <!-- endinjector -->
+
+    <div id='wx_pic' style='margin:0 auto;display:none;'>
+        <img src="assets/images/thumb.jpg" alt="" width="600" height="600"/>
+    </div>
+</head>
+<body style="background-color: #c2beb8;">
+
+<!-- wrap -->
+<div class="wrap">
+    <!-- loading -->
+    <div class="loading play">
+        <div class="bird pa transform"></div>
+        <div class="line-wrap pa"></div>
+        <div class="counter pa">1%</div>
+    </div>
+    <!-- end loading -->
+
+    <!-- content -->
+    <div class="swiper-container" style="display: none;">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide scene scene-home">
+                <!-- main scene -->
+                <div class="main-scene">
+                    <div class="logo pa tc" style="left: 0; right: 0; top: 32px;">
+                        <img src="assets/images/s01-logo.png" alt="" width="141"/>
+                    </div>
+                    <!--<img class="bird pa" src="assets/images/s01-bird.png" alt="" width="90" style="top: 142px; left: 51px;"/>-->
+                    <div class="bird pa" style="top: 120px; left: 51px;"></div>
+
+                    <!--<div class="tips pa tc" style="bottom: 12.7%; left: 0; right: 0;">-->
+                    <!--<img src="assets/images/s01-tips.png" alt="" width="256"/>-->
+                    <!--</div>-->
+
+                    <div class="brand pa tc" style="left: 0; right: 0; bottom: 5.9%">
+                        <img src="assets/images/brand.png" alt="" width="111"/>
+                    </div>
+
+                    <!-- stone body -->
+                    <canvas id="stone-body" width="375" height="308"></canvas>
+                    <!-- end stone body -->
+                    <!-- wave -->
+                    <canvas id="stone-wave" width="375" height="130"></canvas>
+                    <!-- end wave -->
+                    <!-- cursor -->
+                    <div class="cursor pa">
+                        <img src="assets/images/scene01-cursor.png" alt="" width="19"/>
+                    </div>
+                    <!-- end cursor -->
+
+                    <!-- small stone -->
+                    <div class="group">
+                        <div class="item item01">
+                            <img class="title pa" src="assets/images/s01-title01.png" width="129" alt=""/>
+
+                            <div class="stone pa">
+                                <img class="stone-txt pa" src="assets/images/stone-txt01.png" width="30" alt=""/>
+                                <span class="stone-block-wrap">
+                                    <img class="stone-block stone-block01 pa" src="assets/images/s01-stone01.png" width="10" alt=""/>
+                                    <img class="stone-block stone-block02 pa" src="assets/images/s01-stone02.png" width="13" alt=""/>
+                                    <img class="stone-block stone-block03 pa" src="assets/images/s01-stone03.png" width="5" alt=""/>
+                                    <img class="stone-block stone-block04 pa" src="assets/images/s01-stone04.png" width="15" alt=""/>
+                                    <img class="stone-block stone-block05 pa" src="assets/images/s01-stone05.png" width="7" alt=""/>
+                                    <img class="stone-block stone-block06 pa" src="assets/images/s01-stone06.png" width="8" alt=""/>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="item item02">
+                            <img class="title pa" src="assets/images/s01-title02.png" width="156" alt=""/>
+
+                            <div class="stone pa">
+                                <img class="stone-txt pa" src="assets/images/stone-txt02.png" width="30" alt=""/>
+                                <span class="stone-block-wrap">
+                                    <img class="stone-block stone-block01 pa" src="assets/images/s01-stone01.png" width="10" alt=""/>
+                                    <img class="stone-block stone-block02 pa" src="assets/images/s01-stone02.png" width="13" alt=""/>
+                                    <img class="stone-block stone-block03 pa" src="assets/images/s01-stone03.png" width="5" alt=""/>
+                                    <img class="stone-block stone-block04 pa" src="assets/images/s01-stone04.png" width="15" alt=""/>
+                                    <img class="stone-block stone-block05 pa" src="assets/images/s01-stone05.png" width="7" alt=""/>
+                                    <img class="stone-block stone-block06 pa" src="assets/images/s01-stone06.png" width="8" alt=""/>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="item item03">
+                            <img class="title pa" src="assets/images/s01-title03.png" width="121" alt=""/>
+
+                            <div class="stone pa">
+                                <img class="stone-txt pa" src="assets/images/stone-txt03.png" width="30" alt=""/>
+                                <span class="stone-block-wrap">
+                                    <img class="stone-block stone-block01 pa" src="assets/images/s01-stone01.png" width="10" alt=""/>
+                                    <img class="stone-block stone-block02 pa" src="assets/images/s01-stone02.png" width="13" alt=""/>
+                                    <img class="stone-block stone-block03 pa" src="assets/images/s01-stone03.png" width="5" alt=""/>
+                                    <img class="stone-block stone-block04 pa" src="assets/images/s01-stone04.png" width="15" alt=""/>
+                                    <img class="stone-block stone-block05 pa" src="assets/images/s01-stone05.png" width="7" alt=""/>
+                                    <img class="stone-block stone-block06 pa" src="assets/images/s01-stone06.png" width="8" alt=""/>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="item item04">
+                            <img class="title pa" src="assets/images/s01-title04.png" width="204" alt=""/>
+
+                            <div class="stone pa">
+                                <img class="stone-txt pa" src="assets/images/stone-txt04.png" width="30" alt=""/>
+                            <span class="stone-block-wrap">
+                                <img class="stone-block stone-block01 pa" src="assets/images/s01-stone01.png" width="10" alt=""/>
+                                <img class="stone-block stone-block02 pa" src="assets/images/s01-stone02.png" width="13" alt=""/>
+                                <img class="stone-block stone-block03 pa" src="assets/images/s01-stone03.png" width="5" alt=""/>
+                                <img class="stone-block stone-block04 pa" src="assets/images/s01-stone04.png" width="15" alt=""/>
+                                <img class="stone-block stone-block05 pa" src="assets/images/s01-stone05.png" width="7" alt=""/>
+                                <img class="stone-block stone-block06 pa" src="assets/images/s01-stone06.png" width="8" alt=""/>
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- small stone -->
+                </div>
+                <!-- end main scene -->
+            </div>
+
+            <!-- menu scene -->
+            <div class="swiper-slide scene scene-menu">
+                <!-- menu -->
+                <div class="menu-scene">
+                    <div class="item item01">
+                        <img src="assets/images/menu01.png" alt="" width="375"/>
+                    </div>
+                    <div class="item item02">
+                        <img src="assets/images/menu02.png" alt="" width="375"/>
+                    </div>
+                    <div class="item item03">
+                        <img src="assets/images/menu03.png" alt="" width="375"/>
+                    </div>
+                    <div class="item item04">
+                        <img src="assets/images/menu04.png" alt="" width="375"/>
+                    </div>
+                </div>
+                <!-- end menu -->
+            </div>
+            <!-- end menu scene -->
+
+            <div class="swiper-slide scene scene01">
+                <div class="t-a-01 pa tc">
+                    <img lazy-src="assets/images/scene01-01.png" alt="" width="112"/>
+                </div>
+                <div class="t-a-02 pa tc">
+                    <img lazy-src="assets/images/scene01-02.png" alt="" width="65"/>
+                </div>
+                <div class="t-a-03 pa tc">
+                    <img lazy-src="assets/images/scene01-03.png" alt="" width="76"/>
+                </div>
+                <div class="line01 pa"></div>
+            </div>
+
+            <div class="swiper-slide scene scene02">
+                <div class="main-wrap">
+                    <div class="main"></div>
+                    <img class="arr" src="assets/images/arrow04.png" alt="" width="9"/>
+                </div>
+                <div class="bg"></div>
+            </div>
+
+            <div class="swiper-slide scene scene03">
+                <div class="t-a-01 pa tc">
+                    <img lazy-src="assets/images/scene03-01.png" alt="" width="75"/>
+                </div>
+                <div class="t-a-02 pa tc">
+                    <img lazy-src="assets/images/scene03-02.png" alt="" width="80"/>
+                </div>
+                <div class="t-a-03 pa tc">
+                    <img lazy-src="assets/images/scene03-03.png" alt="" width="75"/>
+                </div>
+                <div class="line01 pa"></div>
+            </div>
+
+            <div class="swiper-slide scene scene03-00">
+                <div class="main-wrap">
+                    <div class="main"></div>
+                    <img class="arr" src="assets/images/arrow04.png" alt="" width="9"/>
+                </div>
+                <div class="bg"></div>
+            </div>
+
+            <!-- big pictures -->
+            <div class="swiper-slide scene scene03-01 scene-big-picture">
+                <div class="content">
+                    <img class="cloud cloud01 pa" lazy-src="assets/images/cloud01.png" alt="" width="70"/>
+                    <img class="cloud cloud02 pa" lazy-src="assets/images/cloud02.png" alt="" width="135"/>
+                    <img class="cloud cloud03 pa" lazy-src="assets/images/cloud02.png" alt="" width="50"/>
+
+                    <div class="title-b-01 pa tc">
+                        <img lazy-src="assets/images/title-b-01-01.png" alt="" width="275"/>
+                    </div>
+
+                    <div class="subtitle-b subtitle-b-01 pa tc">
+                        <img lazy-src="assets/images/subtitle-b-01-01.png" alt="" width="208"/>
+                    </div>
+                    <div class="subtitle-b subtitle-b-02 pa tc">
+                        <img lazy-src="assets/images/subtitle-b-01-02.png" alt="" width="208"/>
+                    </div>
+                    <div class="subtitle-b subtitle-b-03 pa tc">
+                        <img lazy-src="assets/images/subtitle-b-01-03.png" alt="" width="208"/>
+                    </div>
+
+                    <!-- entry -->
+                    <img class="mountain mountain01 pa" src="assets/images/mountain01.png" alt="" width="37"/>
+                    <img class="mountain mountain02 pa" src="assets/images/mountain02.png" alt="" width="127"/>
+                    <img class="mountain mountain03 pa" src="assets/images/mountain03.png" alt="" width="75"/>
+                    <img class="mountain mountain04 pa" src="assets/images/mountain04.png" alt="" width="15"/>
+
+                    <div class="circle pa" data-pic-index="1">
+                        <img lazy-src="assets/images/scene03-cursor.png" width="68" alt=""/>
+                    </div>
+                    <!-- end entry -->
+
+                    <div class="line03 pa"></div>
+                </div>
+            </div>
+
+            <div class="swiper-slide scene scene03-02 scene-big-picture">
+                <div class="content">
+                    <img class="lack pa" src="assets/images/bg-03-02.png" width="262" alt="" style="left: 74px; top: 46px;"/>
+
+                    <div class="title-b-01 pa tc" style="top: 380px;">
+                        <img lazy-src="assets/images/title-b-02-01.png" alt="" width="274"/>
+                    </div>
+
+                    <!-- entry -->
+                    <img class="board board01 pa" lazy-src="assets/images/board01.png" alt="" width="12"/>
+                    <img class="board board02 pa" lazy-src="assets/images/board02.png" alt="" width="42"/>
+                    <img class="board board03 pa" lazy-src="assets/images/board03.png" alt="" width="138"/>
+
+                    <div class="circle pa" data-pic-index="2">
+                        <img lazy-src="assets/images/scene03-cursor.png" width="68" alt=""/>
+                    </div>
+                    <!-- end entry -->
+                </div>
+            </div>
+
+            <div class="swiper-slide scene scene03-03 scene-big-picture">
+                <div class="content">
+                    <img class="lack pa" lazy-src="assets/images/bg-03-03.png" width="375" alt="" style="left: 0; right: 0; top: 126px;"/>
+
+                    <div class="title-b-01 pa tc">
+                        <img lazy-src="assets/images/title-b-03-03.png" alt="" width="252"/>
+                    </div>
+
+                    <div class="subtitle-b subtitle-b-01 pa tc">
+                        <img lazy-src="assets/images/subtitle-b-03-01.png" alt="" width="290"/>
+                    </div>
+                    <div class="subtitle-b subtitle-b-02 pa tc">
+                        <img lazy-src="assets/images/subtitle-b-03-02.png" alt="" width="290"/>
+                    </div>
+                    <div class="subtitle-b subtitle-b-03 pa tc">
+                        <img lazy-src="assets/images/subtitle-b-03-03.png" alt="" width="290"/>
+                    </div>
+                    <div class="subtitle-b subtitle-b-04 pa tc">
+                        <img lazy-src="assets/images/subtitle-b-03-04.png" alt="" width="290"/>
+                    </div>
+
+                    <!-- entry -->
+                    <img class="tree tree01 pa" lazy-src="assets/images/tree01.png" alt="" width="36"/>
+                    <img class="tree tree02 pa" lazy-src="assets/images/tree02.png" alt="" width="26"/>
+                    <img class="tree tree03 pa" lazy-src="assets/images/tree03.png" alt="" width="23"/>
+
+                    <img class="big-bird pa" lazy-src="assets/images/big-bird.png" alt="" width="165"/>
+
+                    <div class="circle pa" data-pic-index="3">
+                        <img lazy-src="assets/images/scene03-cursor.png" width="68" alt=""/>
+                    </div>
+                    <!-- end entry -->
+
+                    <div class="line03 pa"></div>
+                </div>
+            </div>
+            <!-- end big pictures -->
+
+            <div class="swiper-slide scene scene04">
+                <div class="t-a-01 pa tc">
+                    <img lazy-src="assets/images/scene04-01.png" alt="" width="75"/>
+                </div>
+                <div class="t-a-02 pa tc">
+                    <img lazy-src="assets/images/scene04-02.png" alt="" width="62"/>
+                </div>
+                <div class="t-a-03 pa tc">
+                    <img lazy-src="assets/images/scene04-03.png" alt="" width="75"/>
+                </div>
+                <div class="line01 pa"></div>
+            </div>
+
+            <div class="swiper-slide scene scene05">
+                <div class="main-wrap">
+                    <div class="main"></div>
+                    <img class="arr" src="assets/images/arrow04.png" alt="" width="9"/>
+                </div>
+            </div>
+
+            <div class="swiper-slide scene scene06">
+                <div class="content">
+                    <div  class="texture-title texture-title01 pa" >
+                        <img lazy-src="assets/images/texture-title01.png" alt=""/>
+                        <span class="circle2 pa"></span>
+                    </div>
+                    <div  class="texture-title texture-title02 pa" >
+                        <img lazy-src="assets/images/texture-title02.png" alt=""/>
+                        <span class="circle2 pa"></span>
+                    </div>
+                    <div  class="texture-title texture-title03 pa" >
+                        <img lazy-src="assets/images/texture-title03.png" alt=""/>
+                        <span class="circle2 pa"></span>
+                    </div>
+                    <div  class="texture-title texture-title04 pa" >
+                        <img lazy-src="assets/images/texture-title04.png" alt=""/>
+                        <span class="circle2 pa"></span>
+                    </div>
+                    <div  class="texture-title texture-title05 pa" >
+                        <img lazy-src="assets/images/texture-title05.png" alt=""/>
+                        <span class="circle2 pa"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- slider -->
+            <div class="swiper-slide scene scene-slider scene07">
+                <div class="main-wrap">
+                    <div class="main"></div>
+                    <img class="arr" src="assets/images/arrow04.png" alt="" width="9"/>
+                </div>
+
+                <ul class="bxslider">
+                    <li>
+                        <div class="bg">
+                            <img lazy-src="assets/images/bg07-01.jpg" width="375" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bg">
+                            <img lazy-src="assets/images/bg07-02.jpg" width="375" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bg">
+                            <img lazy-src="assets/images/bg07-03.jpg" width="375" />
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="swiper-slide scene scene-slider scene07 scene0702">
+                <div class="main-wrap">
+                    <div class="main"></div>
+                    <img class="arr" src="assets/images/arrow04.png" alt="" width="9"/>
+                </div>
+
+                <ul class="bxslider">
+                    <li>
+                        <div class="bg">
+                            <img lazy-src="assets/images/bg07-04.jpg" width="375" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bg">
+                            <img lazy-src="assets/images/bg07-05.jpg" width="375" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bg">
+                            <img lazy-src="assets/images/bg07-06.jpg" width="375" />
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="swiper-slide scene scene-slider scene07 scene0703">
+                <div class="main-wrap">
+                    <div class="main"></div>
+                </div>
+
+                <ul class="bxslider">
+                    <li>
+                        <div class="bg">
+                            <img lazy-src="assets/images/bg07-07.jpg" width="375" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bg">
+                            <img lazy-src="assets/images/bg07-08.jpg" width="375" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bg">
+                            <img lazy-src="assets/images/bg07-09.jpg" width="375" />
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- end slider -->
+
+            <div class="swiper-slide scene scene08">
+                <div class="t-a-01 pa tc">
+                    <img lazy-src="assets/images/scene08-01.png" alt="" width="75"/>
+                </div>
+                <div class="t-a-02 pa tc">
+                    <img lazy-src="assets/images/scene08-02.png" alt="" width="106"/>
+                </div>
+                <div class="t-a-03 pa tc">
+                    <img lazy-src="assets/images/scene08-03.png" alt="" width="75"/>
+                </div>
+                <div class="line01 pa"></div>
+            </div>
+
+            <div class="swiper-slide scene scene09-before">
+                <div class="main-wrap">
+                    <div class="main"></div>
+                    <img class="arr" src="assets/images/arrow04.png" alt="" width="9"/>
+                </div>
+            </div>
+
+            <div class="swiper-slide scene scene-slider scene07 scene07-last">
+                <ul class="bxslider">
+                    <li>
+                        <div class="bg">
+                            <img lazy-src="assets/images/bg07_a_01.jpg" width="375" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bg">
+                            <img lazy-src="assets/images/bg07_a_02.jpg" width="375" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bg">
+                            <img lazy-src="assets/images/bg07_a_03.jpg" width="375" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bg">
+                            <img lazy-src="assets/images/bg07_a_04.jpg" width="375" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bg">
+                            <img lazy-src="assets/images/bg07_a_05.jpg" width="375" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bg">
+                            <img lazy-src="assets/images/bg07_a_06.jpg" width="375" />
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="swiper-slide scene scene-slider scene07 scene07-last">
+                <ul class="bxslider">
+                    <li>
+                        <div class="bg">
+                            <img lazy-src="assets/images/bg07_b_01.jpg" width="375" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bg">
+                            <img lazy-src="assets/images/bg07_b_02.jpg" width="375" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bg">
+                            <img lazy-src="assets/images/bg07_b_03.jpg" width="375" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bg">
+                            <img lazy-src="assets/images/bg07_b_04.jpg" width="375" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bg">
+                            <img lazy-src="assets/images/bg07_b_05.jpg" width="375" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bg">
+                            <img lazy-src="assets/images/bg07_b_06.jpg" width="375" />
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="swiper-slide scene scene-slider scene07 scene07-last">
+                <ul class="bxslider">
+                    <li>
+                        <div class="bg">
+                            <img lazy-src="assets/images/bg07_c_01.jpg" width="375" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bg">
+                            <img lazy-src="assets/images/bg07_c_02.jpg" width="375" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bg">
+                            <img lazy-src="assets/images/bg07_c_03.jpg" width="375" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bg">
+                            <img lazy-src="assets/images/bg07_c_04.jpg" width="375" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bg">
+                            <img lazy-src="assets/images/bg07_c_05.jpg" width="375" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bg">
+                            <img lazy-src="assets/images/bg07_c_06.jpg" width="375" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bg">
+                            <img lazy-src="assets/images/bg07_c_07.jpg" width="375" />
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="swiper-slide scene scene-slider scene09 scene07-last">
+                <ul class="bxslider">
+                    <li>
+                        <img lazy-src="assets/images/room-01.jpg" alt="" width="375"/>
+                    </li>
+
+                    <li>
+                        <img lazy-src="assets/images/room-02.jpg" alt="" width="375"/>
+                    </li>
+
+                    <li>
+                        <img lazy-src="assets/images/room-03.jpg" alt="" width="375"/>
+                    </li>
+
+                    <li>
+                        <img lazy-src="assets/images/room-04.jpg" alt="" width="375"/>
+                    </li>
+
+                    <li>
+                        <img lazy-src="assets/images/room-05.jpg" alt="" width="375"/>
+                    </li>
+
+                    <li>
+                        <img lazy-src="assets/images/room-06.jpg" alt="" width="375"/>
+                    </li>
+
+                    <li>
+                        <img lazy-src="assets/images/room-07.jpg" alt="" width="375"/>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="swiper-slide scene scene-final">
+                <div class="final01 pa tc">
+                    <img lazy-src="assets/images/final01.png" alt="" width="375"/>
+                    <div class="book pa">
+                        <a href="tel:041166888333">
+                            <img lazy-src="assets/images/book.png" alt="" width="92"/>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="final02 pa tc">
+                    <img lazy-src="assets/images/final02.png" alt="" width="120"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- content -->
+
+    <!-- big picture -->
+    <div class="big-picture" style="display: none;">
+        <div class="picture-wrap">
+            <img id="imageZoom" lazy-src="assets/images/big-picture01.jpg" alt=""/>
+        </div>
+
+        <div class="title tc pa">
+            <img lazy-src="assets/images/big-picture-title01.png" width="325" alt=""/>
+        </div>
+
+        <ul class="bxslider">
+            <li>
+                <div class="bg">
+                    <img lazy-src="assets/images/big03-01.jpg" width="375" />
+                </div>
+            </li>
+
+            <li>
+                <div class="bg">
+                    <img lazy-src="assets/images/big03-02.jpg" width="375" />
+                </div>
+            </li>
+
+            <li>
+                <div class="bg">
+                    <img lazy-src="assets/images/big03-03.jpg" width="375" />
+                </div>
+            </li>
+
+            <li>
+                <div class="bg">
+                    <img lazy-src="assets/images/big03-04.jpg" width="375" />
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- end big picture -->
+
+    <!--  textures -->
+    <div class="textures" style="display: none;">
+        <div class="pr texture texture01">
+            <img class="a pa" lazy-src="assets/images/texture01-bg-n.jpg" alt="" width="375"/>
+
+            <div class="pa tc txt">
+                <img lazy-src="assets/images/click.png" alt="" width="84"/>
+
+                <div class="slider-arrow"></div>
+                <div class="slider-arrow slider-arrow02"></div>
+                <div class="slider-arrow slider-arrow03"></div>
+            </div>
+
+            <div class="blocks">
+                <img class="block block01 pa" lazy-src="assets/images/texture01-01.png" alt="" width="375"/>
+                <img class="block block02 pa" lazy-src="assets/images/texture01-02.png" alt="" width="375"/>
+                <img class="block block03 pa" lazy-src="assets/images/texture01-03.png" alt="" width="375"/>
+                <img class="block block04 pa" lazy-src="assets/images/texture01-04.png" alt="" width="375"/>
+                <img class="block block05 pa" lazy-src="assets/images/texture01-05.png" alt="" width="375"/>
+                <img class="block block06 pa" lazy-src="assets/images/texture01-06.png" alt="" width="375"/>
+                <img class="block block07 pa" lazy-src="assets/images/texture01-07.png" alt="" width="375"/>
+                <img class="block block08 pa" lazy-src="assets/images/texture01-08.png" alt="" width="375"/>
+                <img class="block block09 pa" lazy-src="assets/images/texture01-09.png" alt="" width="375"/>
+                <img class="block block10 pa" lazy-src="assets/images/texture01-10.png" alt="" width="375"/>
+                <img class="block block11 pa" lazy-src="assets/images/texture01-11.png" alt="" width="375"/>
+                <img class="block block12 pa" lazy-src="assets/images/texture01-12.png" alt="" width="375"/>
+            </div>
+
+            <img class="text pa" src="assets/images/texture-content01.png" alt="" width="375"/>
+        </div>
+        <div class="pr texture texture02">
+            <div class="a pa tc">
+                <div class="lunzi pa">
+                    <img lazy-src="assets/images/lunzi.png" alt="" width="179"/>
+                </div>
+            </div>
+
+            <div class="pa tc txt">
+                <img src="assets/images/click.png" alt="" width="84"/>
+
+                <div class="slider-arrow"></div>
+                <div class="slider-arrow slider-arrow02"></div>
+                <div class="slider-arrow slider-arrow03"></div>
+            </div>
+
+            <img class="text pa" lazy-src="assets/images/texture-content02.png" alt="" width="375"/>
+        </div>
+        <div class="pr texture texture03">
+            <div class="a pa"></div>
+
+            <div class="pa tc txt">
+                <img lazy-src="assets/images/scratch.png" alt="" width="84"/>
+            </div>
+
+            <img class="text pa" lazy-src="assets/images/texture-content03.png" alt="" width="375"/>
+        </div>
+        <div class="pr texture texture04">
+            <div class="a pa"></div>
+
+            <div class="pa tc txt">
+                <img lazy-src="assets/images/slide.png" alt="" width="84"/>
+            </div>
+
+            <img class="text pa" src="assets/images/texture-content04.png" alt="" width="375"/>
+        </div>
+        <div class="pr texture texture05">
+            <div class="pa tc txt" style="z-index: 310;">
+                <img lazy-src="assets/images/wipe.png" alt="" width="77"/>
+            </div>
+
+            <canvas class="textures-box pa" width="375" height="625"></canvas>
+            <img class="text pa" lazy-src="assets/images/texture-content01.png" alt="" width="375"/>
+        </div>
+    </div>
+    <!--  end textures -->
+
+    <!-- another -->
+    <div class="btn-back loading-statue">
+        <img src="assets/images/btn-back.png" width="75" alt=""/>
+    </div>
+
+    <div class="btn-menu active loading-statue">
+        <img src="assets/images/btn-home.png" width="28" alt=""/>
+
+        <div class="menu-wrap">
+            <a class="menu01" href="tel:041166888333"></a>
+            <span class="menu02" class="btn-menu"></span>
+        </div>
+    </div>
+
+    <div class="tips-arrow" style="display: none;">
+        <div class="slider-arrow"></div>
+        <div class="slider-arrow slider-arrow02"></div>
+    </div>
+
+    <div class="btn-audio active loading-statue">
+        <img src="assets/images/btn-audio.png" width="28" alt=""/>
+    </div>
+
+    <!-- audio -->
+    <audio id="audio" src="assets/audio/music.mp3" loop="loop" style="display: none;"></audio>
+    <!-- end audio -->
+
+    <!-- end another -->
+</div>
+<!-- end wrap -->
+
+
+<!-- loading -->
+<script>
+    //  loading animation
+    function loadingAnimation() {
+        //  load loading image
+        var loadingCount = 0;
+
+        var birdImg = new Image();
+        birdImg.src = 'assets/images/bird-sprite.png';
+        birdImg.onload = function () {
+            loadingCount++;
+
+            if (loadingCount == 2 ) {
+                startPreload();
+            }
+        };
+
+        var loadLine = new Image();
+        loadLine.src = 'assets/images/loading-line.png';
+        loadLine.onload = function () {
+            loadingCount++;
+
+            if (loadingCount == 2 ) {
+                startPreload();
+            }
+        };
+
+        function startPreload () {
+            window.onload = function (){
+                // init app
+                app.preload();
+
+                console.log('app started success...');
+            };
+        }
+    }
+
+    loadingAnimation();
+</script>
+<!-- end loading -->
+
+<!-- injector:js -->
+<!-- page -->
+<script src="//localhost:35729/livereload.js"></script>
+<script src="assets/scripts/jquery-2.1.3.min.js"></script>
+<script src="assets/scripts/jquery.smoothZoom.min.js"></script>
+<script src="assets/scripts/fastclick.js"></script>
+<script src="assets/scripts/swiper.js"></script>
+<script src="assets/scripts/jquery.bxslider.min.js"></script>
+<script src="assets/scripts/main.js"></script>
+<script src="assets/scripts/stone.js"></script>
+<script src="assets/scripts/wave.js"></script>
+<script src="assets/scripts/textures.js"></script>
+<script src="assets/scripts/picture.js"></script>
+
+<!-- less compiler -->
+<script src="assets/scripts/less.min.js"></script>
+<!-- endinjector -->
+</body>
+</html>
